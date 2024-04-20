@@ -1929,13 +1929,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 209261622}
     m_Modifications:
+    - target: {fileID: 3009493740618313417, guid: c24526ae63e0c7e40b176bc47baeba42, type: 3}
+      propertyPath: groundDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3098661617121604689, guid: c24526ae63e0c7e40b176bc47baeba42, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.67
       objectReference: {fileID: 0}
     - target: {fileID: 3098661617121604689, guid: c24526ae63e0c7e40b176bc47baeba42, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 2.47
       objectReference: {fileID: 0}
     - target: {fileID: 3098661617121604689, guid: c24526ae63e0c7e40b176bc47baeba42, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1968,6 +1972,10 @@ PrefabInstance:
     - target: {fileID: 3098661617121604689, guid: c24526ae63e0c7e40b176bc47baeba42, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3351814613337485134, guid: c24526ae63e0c7e40b176bc47baeba42, type: 3}
+      propertyPath: cooldownDuration
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3464951101454720763, guid: c24526ae63e0c7e40b176bc47baeba42, type: 3}
       propertyPath: m_Avatar

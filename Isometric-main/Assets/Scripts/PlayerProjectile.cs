@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerProjectile : MonoBehaviour
 {
     [SerializeField][Range(1, 50)] private int damage = 10;
-    [SerializeField][Range(0, 1)] private float projectileLifeTime;
+    [SerializeField][Range(0, 5)] private float projectileLifeTime;
 
     private void Update()
     {

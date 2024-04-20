@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2849149204138409378}
   - component: {fileID: 8346300646678168470}
   - component: {fileID: 5156974898196830373}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Oclin (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7373869439860853082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bullet Spawnpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 8691217580910683050}
   - component: {fileID: 375184323102724207}
   - component: {fileID: 8942268774510853320}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Oclin (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 8212203497177414237}
   - component: {fileID: 6767304864282749746}
   - component: {fileID: 1710946609364281432}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 5080097691314246936}
   - component: {fileID: 39303416483384995}
   - component: {fileID: 4961833227423669836}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Inimigo
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 3177828033449575329}
   - component: {fileID: 8319187153417792965}
   - component: {fileID: 8665295741091517298}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +539,7 @@ GameObject:
   - component: {fileID: 9024817524686200590}
   - component: {fileID: 4919932640176434067}
   - component: {fileID: 135298871600070034}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -652,7 +652,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 315510976759759341}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Modelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -690,7 +690,7 @@ GameObject:
   - component: {fileID: 5859455352541168814}
   - component: {fileID: 7001729694811186670}
   - component: {fileID: 6826515134756734741}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Oclin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,6 +854,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b6b0d0944a24a114389f2a369f2c3803, type: 3}
       propertyPath: m_Name
       value: INIMIGO_1_Crg
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b6b0d0944a24a114389f2a369f2c3803, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

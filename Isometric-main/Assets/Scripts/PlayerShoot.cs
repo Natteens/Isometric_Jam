@@ -16,13 +16,14 @@ public class PlayerShoot : MonoBehaviour
     public ShootConfig[] shootConfigs; // Lista de configurações de disparo
     public float cooldownDuration = 1f; // Duração do tempo de recarga em segundos
     public LayerMask groundLayer; // Camada do terreno para o raycast
+    public LayerMask enemyLayer; // Camada do inimigo para o raycast, fds
 
     private Animator anim;
     private bool canShoot = true; // Flag para verificar se o personagem pode disparar
 
     private void Start()
     {
-        anim = GetComponentInChildren<Animator>();    
+        anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -34,12 +35,13 @@ public class PlayerShoot : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer) ||
+                Physics.Raycast(ray, out hit, Mathf.Infinity, enemyLayer))
             {
                 // Dispara o objeto de acordo com a configuração e a posição de mira no chão
                 foreach (var config in shootConfigs)
                 {
-                    Shoot(config,new Vector3 (hit.point.x, hit.point.y + config.spawnPoint.position.y, hit.point.z)); // Dispara o objeto de acordo com a configuração e a posição de mira no chão
+                    Shoot(config, new Vector3(hit.point.x, hit.point.y + config.spawnPoint.position.y, hit.point.z)); // Dispara o objeto de acordo com a configuração e a posição de mira no chão
                 }
             }
 
@@ -48,29 +50,29 @@ public class PlayerShoot : MonoBehaviour
     }
 
 
-void Shoot(ShootConfig config, Vector3 targetPosition)
-{
-    for (int i = 0; i < config.projectileCount; i++)
+    void Shoot(ShootConfig config, Vector3 targetPosition)
     {
-        // Calcula um desvio aleatório baseado na precisão apenas nos eixos X e Z
-        Vector3 deviation = new Vector3(Random.Range(-1f, 1f) * (1f - config.accuracy), 0f, Random.Range(-1f, 1f) * (1f - config.accuracy));
+        for (int i = 0; i < config.projectileCount; i++)
+        {
+            // Calcula um desvio aleatório baseado na precisão apenas nos eixos X e Z
+            Vector3 deviation = new Vector3(Random.Range(-1f, 1f) * (1f - config.accuracy), 0f, Random.Range(-1f, 1f) * (1f - config.accuracy));
 
-        // Calcula a direção de disparo ajustada para o ponto de mira com desvio aleatório
-        Vector3 shootDirection = (targetPosition - config.spawnPoint.position + deviation).normalized;
+            // Calcula a direção de disparo ajustada para o ponto de mira com desvio aleatório
+            Vector3 shootDirection = (targetPosition - config.spawnPoint.position + deviation).normalized;
 
-        // Instancia o objeto projetil a partir do prefab no ponto de origem
-        GameObject projectile = Instantiate(config.projectilePrefab, config.spawnPoint.position, config.spawnPoint.rotation);
+            // Instancia o objeto projetil a partir do prefab no ponto de origem
+            GameObject projectile = Instantiate(config.projectilePrefab, config.spawnPoint.position, config.spawnPoint.rotation);
 
-        // Obtém o componente Rigidbody do projetil
-        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+            // Obtém o componente Rigidbody do projetil
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
 
-        // Aplica a força para disparar o objeto
-        rb.AddForce(shootDirection * config.shootForce, ForceMode.Impulse);
+            // Aplica a força para disparar o objeto
+            rb.AddForce(shootDirection * config.shootForce, ForceMode.Impulse);
+        }
+
+        // Inicia o tempo de recarga
+        StartCoroutine(Cooldown());
     }
-
-    // Inicia o tempo de recarga
-    StartCoroutine(Cooldown());
-}
     IEnumerator Cooldown()
     {
         canShoot = false; // Impede que o personagem dispare enquanto estiver em recarga
