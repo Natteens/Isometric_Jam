@@ -14,7 +14,7 @@ public class PlayerProjectile : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("Enemy"))
         {
-            BaseHealthSystem hs = other.gameObject.GetComponent<BaseHealthSystem>();
+            EnemyUICaralho hs = other.gameObject.GetComponent<EnemyUICaralho>();
             if(hs != null)
             {
                 hs.TakeDamage(damage);

@@ -7,7 +7,7 @@ public class EnemyBullet
     public GameObject projectilePrefab; // Prefab do objeto que será disparado
     public Transform spawnPoint; // Ponto de origem do disparo
     public int projectileCount = 1; // Quantidade de projéteis a serem instanciados
-    [SerializeField][Range(1, 50)]public int shootForce = 20; // Força do disparo
+    [SerializeField][Range(1, 50)] public int shootForce = 20; // Força do disparo
     [Range(0f, 1f)] public float accuracy = 1f; // Precisão do disparo (0: aleatório, 1: direto)
     [SerializeField][Range(0, 5)] public float attackCooldown = 2f;
 
@@ -38,13 +38,18 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float fleeDistance = 10f;
 
     private int currentWaypointIndex = 0;
+    private Vector3 initialPosition;
+    private Vector3 currentDestination;
+    private float patrolRadius = 5f;
 
     private void Start()
     {
+        initialPosition = transform.position;
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
+        SetRandomDestination();
     }
 
     private void Update()
@@ -52,7 +57,8 @@ public class EnemyController : MonoBehaviour
         switch (currentState)
         {
             case EnemyState.Patrolling:
-                PatrollingUpdate();
+                //PatrollingUpdate();
+                MoveTowardsDestination();
                 break;
             case EnemyState.Chasing:
                 ChasingUpdate();
@@ -64,6 +70,31 @@ public class EnemyController : MonoBehaviour
             case EnemyState.Fleeing:
                 FleeingUpdate();
                 break;
+        }
+    }
+    private void SetRandomDestination()
+    {
+        // Gera um ponto aleatório dentro do raio de patrulha em torno do ponto de nascimento
+        currentDestination = initialPosition + Random.insideUnitSphere * patrolRadius;
+        currentDestination.y = transform.position.y; // Mantém a mesma altura do inimigo
+    }
+
+    private void MoveTowardsDestination()
+    {
+        // Move o inimigo em direção ao ponto de destino atual
+        transform.position = Vector3.MoveTowards(transform.position, currentDestination, moveSpeed * Time.deltaTime);
+
+        // Olha na direção do ponto de destino
+        transform.LookAt(currentDestination);
+
+        if (PlayerIsNear())
+        {
+            currentState = EnemyState.Chasing;
+        }
+        else if (Vector3.Distance(transform.position, currentDestination) < 0.1f)
+        {
+            // Define um novo ponto de destino aleatório
+            SetRandomDestination();
         }
     }
 
@@ -79,6 +110,12 @@ public class EnemyController : MonoBehaviour
         else if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.1f)
         {
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+        }
+
+        // Verifica se o inimigo está fora da área de patrulha e retorna ao ponto de spawn
+        if (Vector3.Distance(transform.position, initialPosition) > detectionDistance)
+        {
+            currentWaypointIndex = 0; // Reinicia a patrulha a partir do primeiro ponto
         }
 
     }
@@ -183,5 +220,4 @@ public class EnemyController : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, fleeDistance);
     }
-
 }

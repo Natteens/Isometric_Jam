@@ -13,15 +13,6 @@ public class PlayerHealthSystem : BaseHealthSystem
         uIManager = FindObjectOfType<UIManager>();
     }
 
-    // private void FixedUpdate()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.D))
-    //     {
-    //         TakeDamage(10);
-    //     }
-    // }
-
-
     // Implementação do método para receber dano
     public override void TakeDamage(int damageAmount)
     {
