@@ -402,13 +402,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
-    'mixamorig:LeftHandIndex1'\n\tTransform 'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform
-    'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftLeg'\n\tTransform 'mixamorig:LeftShoulder'\n\tTransform
-    'mixamorig:RightHandIndex3'\n\tTransform 'mixamorig:RightFoot'\n\tand more ...\n\tFrom
-    animation clip 'mixamo.com'\n\tFrom animation clip 'mixamo.com'"
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -1073,6 +1067,7 @@ GameObject:
   - component: {fileID: 3351814613337485134}
   - component: {fileID: 7201744480576413795}
   - component: {fileID: 6423525323097685386}
+  - component: {fileID: 8291072062119223802}
   m_Layer: 0
   m_Name: Personagem
   m_TagString: Player
@@ -1216,6 +1211,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealthbarSprite: {fileID: 0}
+--- !u!114 &8291072062119223802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6506709997640290801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930f06879844e0b49a0ad0283b08d221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6654451710861048425
 GameObject:
   m_ObjectHideFlags: 0
