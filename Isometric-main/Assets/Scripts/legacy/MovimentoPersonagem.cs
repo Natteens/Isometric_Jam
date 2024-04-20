@@ -16,7 +16,7 @@ public class CharacterMovement : MonoBehaviour
     private bool isGrounded; // Flag para controlar se o jogador está no chão
     private Camera cam;
     private Rigidbody rb; // Referência para o componente Rigidbody
-
+    private Animator anim;
 
     private bool isDashing = false; // Flag para verificar se o personagem está dando um dash
     private bool canDash = true; // Flag para verificar se o personagem pode dar um dash
@@ -28,6 +28,8 @@ public class CharacterMovement : MonoBehaviour
 
         // Obtém o componente Rigidbody do personagem
         rb = GetComponent<Rigidbody>();
+
+        anim = GetComponentInChildren<Animator>();
     }
 
     void FixedUpdate()
@@ -98,6 +100,15 @@ public class CharacterMovement : MonoBehaviour
 
         // Aplica o movimento relativo à tela ao personagem usando Rigidbody
         rb.MovePosition(rb.position + screenDirection * moveSpeed * Time.fixedDeltaTime);
+        
+        if (moveDirection.magnitude > 0)
+        {
+            anim.SetBool("IsMoving", true);
+        }
+        else
+        {
+            anim.SetBool("IsMoving", false);
+        }
     }
 
     void Jump()

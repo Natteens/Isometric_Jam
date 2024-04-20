@@ -17,7 +17,13 @@ public class PlayerShoot : MonoBehaviour
     public float cooldownDuration = 1f; // Duração do tempo de recarga em segundos
     public LayerMask groundLayer; // Camada do terreno para o raycast
 
+    private Animator anim;
     private bool canShoot = true; // Flag para verificar se o personagem pode disparar
+
+    private void Start()
+    {
+        anim = GetComponentInChildren<Animator>();    
+    }
 
     void Update()
     {
@@ -36,6 +42,8 @@ public class PlayerShoot : MonoBehaviour
                     Shoot(config,new Vector3 (hit.point.x, hit.point.y + config.spawnPoint.position.y, hit.point.z)); // Dispara o objeto de acordo com a configuração e a posição de mira no chão
                 }
             }
+
+            anim.SetBool("IsShooting", true);
         }
     }
 
@@ -70,6 +78,7 @@ void Shoot(ShootConfig config, Vector3 targetPosition)
         // Aguarda a duração do tempo de recarga
         yield return new WaitForSeconds(cooldownDuration);
 
+        anim.SetBool("IsShooting", false);
         canShoot = true; // Permite que o personagem dispare novamente após o tempo de recarga
     }
 }

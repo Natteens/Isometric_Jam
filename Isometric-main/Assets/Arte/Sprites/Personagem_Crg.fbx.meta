@@ -3,7 +3,12 @@ guid: 02037f8d2dc215a428b559be06e0c7d9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TEXTURATOTAL
+    second: {fileID: 2100000, guid: a567a87c4d1df9f41aa038d6a010a80a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
