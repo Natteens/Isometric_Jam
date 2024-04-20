@@ -9,6 +9,12 @@ public class IsometricCameraControl : MonoBehaviour
     private Quaternion targetRotation; // Rotação alvo da câmera
     private float targetAngle; // Ângulo alvo de rotação
 
+
+
+    public Transform player; // Referência ao jogador
+    public float smoothSpeed = 0.125f; // Velocidade de suavização do movimento
+    public Vector3 offset; // Deslocamento da câmera em relação ao jogador
+
     void Start()
     {
         // Posiciona a câmera centralizando o mapa
@@ -37,13 +43,30 @@ public class IsometricCameraControl : MonoBehaviour
         }
     }
 
+    void LateUpdate()
+    {
+        // Calcula a posição desejada da câmera com base na posição do jogador e no offset
+        Vector3 desiredPosition = player.position + offset;
+
+        // Suaviza o movimento da câmera usando a função Lerp
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+
+        // Mantém a rotação da câmera com um ângulo de 45 graus no eixo X
+        Quaternion desiredRotation = Quaternion.Euler(45f, 0f, 0f);
+
+        // Aplica a nova posição e rotação à câmera
+        transform.position = smoothedPosition;
+        transform.rotation = desiredRotation;
+    }
+
+
     // Método para posicionar a câmera centralizando o mapa
     void PositionCamera()
     {
         // Calcula a posição da câmera para centralizar o mapa
         Vector3 mapCenter = mapa.transform.position;
         Vector3 cameraPosition = new Vector3(mapCenter.x, mapCenter.y + Mathf.Sqrt(2) * mapa.transform.localScale.y / 2f, mapCenter.z);
-        
+
         // Define a posição da câmera
         transform.position = cameraPosition;
 
@@ -56,7 +79,7 @@ public class IsometricCameraControl : MonoBehaviour
     {
         // Calcula a rotação alvo com base no ângulo alvo
         targetRotation = Quaternion.Euler(transform.eulerAngles.x, targetAngle, transform.eulerAngles.z);
-        
+
         // Rotaciona suavemente a câmera para a rotação alvo
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
