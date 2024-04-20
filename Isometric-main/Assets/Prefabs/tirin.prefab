@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6deba8b57c951f74ea3a6633d80319dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 50
   projectileLifeTime: 1.19
 --- !u!1001 &2894610297796099720
 PrefabInstance:

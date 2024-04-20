@@ -29,7 +29,7 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
         // Verifica se o personagem pode disparar e se o botão esquerdo do mouse foi pressionado
-        if (canShoot && Input.GetMouseButtonDown(0))
+        if (canShoot && Input.GetMouseButton(0))
         {
             // Lance um raycast a partir da posição do mouse na tela na direção da câmera
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

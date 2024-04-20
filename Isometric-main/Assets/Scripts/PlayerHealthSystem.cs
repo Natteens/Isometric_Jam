@@ -12,7 +12,11 @@ public class PlayerHealthSystem : BaseHealthSystem
         currentHealth = maxHealth;
         uIManager = FindObjectOfType<UIManager>();
     }
-
+    public void HealDamage(int heal)
+    {
+        currentHealth += heal;
+        uIManager.UpdatePlayerHealthUI(currentHealth, maxHealth);
+    }
     // Implementação do método para receber dano
     public override void TakeDamage(int damageAmount)
     {
@@ -39,6 +43,7 @@ public class PlayerHealthSystem : BaseHealthSystem
     public override void Die()
     {
         // Lógica para quando o jogador morre
+        uIManager.GameOver();
     }
 
     internal void TakeDamage(object damageAmount)

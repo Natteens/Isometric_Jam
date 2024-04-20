@@ -33,6 +33,8 @@ private void OrientUITowardsCamera()
         UpdateHealthUI();
         if (currentHealth <= 0)
         {
+            PlayerHealthSystem playerhp = FindObjectOfType<PlayerHealthSystem>();
+            playerhp.HealDamage(5);
             Die();
         }
     }
