@@ -1,10 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
-<<<<<<< Updated upstream
 --- !u!1 &513215830036208334
-=======
---- !u!1 &3810259782531431036
->>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,34 +8,20 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< Updated upstream
   - component: {fileID: 323207134742456566}
   m_Layer: 0
   m_Name: mixamorig:RightUpLeg
-=======
-  - component: {fileID: 3326802846548655835}
-  - component: {fileID: 1251882713925458990}
-  - component: {fileID: 4766488650905818817}
-  - component: {fileID: 4832159403600931694}
-  m_Layer: 0
-  m_Name: GhostDetector
->>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< Updated upstream
 --- !u!4 &323207134742456566
-=======
---- !u!4 &3326802846548655835
->>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_GameObject: {fileID: 513215830036208334}
   serializedVersion: 2
   m_LocalRotation: {x: 0.12321635, y: 0.0056982636, z: 0.98194253, w: -0.14343677}
@@ -407,24 +389,10 @@ Transform:
 --- !u!95 &3464951101454720763
 Animator:
   serializedVersion: 5
-=======
-  m_GameObject: {fileID: 3810259782531431036}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.38}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3098661617121604689}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1251882713925458990
-MonoBehaviour:
->>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_GameObject: {fileID: 3490480646446878184}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: dc3166e585daa57469413de5fd2c82e4, type: 3}
@@ -446,29 +414,12 @@ MonoBehaviour:
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
 --- !u!65 &3414187186679011326
-=======
-  m_GameObject: {fileID: 3810259782531431036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 480255da110bae14b954cb3e5fdb8fa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionRadius: 5
-  ghostLayer:
-    serializedVersion: 2
-    m_Bits: 0
---- !u!65 &4766488650905818817
->>>>>>> Stashed changes
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_GameObject: {fileID: 3490480646446878184}
-=======
-  m_GameObject: {fileID: 3810259782531431036}
->>>>>>> Stashed changes
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -477,7 +428,6 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-<<<<<<< Updated upstream
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
@@ -486,21 +436,10 @@ BoxCollider:
   m_Center: {x: 0, y: 1.4945381, z: 0}
 --- !u!1 &3778876101120373340
 GameObject:
-=======
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.7587557, y: 1.5847417, z: 3.251227}
-  m_Center: {x: 0.0151753435, y: 0.29237086, z: 1.1256135}
---- !u!54 &4832159403600931694
-Rigidbody:
->>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6426116292934637657}
@@ -655,29 +594,6 @@ Transform:
   - {fileID: 5270926581261637398}
   m_Father: {fileID: 3417337623918246314}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
-  m_GameObject: {fileID: 3810259782531431036}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
->>>>>>> Stashed changes
 --- !u!1 &4347054473733037901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,8 +1073,6 @@ GameObject:
   - component: {fileID: 3351814613337485134}
   - component: {fileID: 7201744480576413795}
   - component: {fileID: 6423525323097685386}
-  - component: {fileID: 2558174854067307936}
-  - component: {fileID: 570016465638691356}
   m_Layer: 0
   m_Name: Personagem
   m_TagString: Player
@@ -1181,7 +1095,6 @@ Transform:
   m_Children:
   - {fileID: 5271000426668127123}
   - {fileID: 8508507441362035434}
-  - {fileID: 3326802846548655835}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &9082749698840704019
@@ -1303,37 +1216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealthbarSprite: {fileID: 0}
-<<<<<<< Updated upstream
 --- !u!1 &6654451710861048425
-=======
---- !u!114 &2558174854067307936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6506709997640290801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 930f06879844e0b49a0ad0283b08d221, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &570016465638691356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6506709997640290801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05b546b6b05ea104e8c120261e0e89ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionDistance: 2
-  interactKey: 102
---- !u!1 &6840947363821912539
->>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
